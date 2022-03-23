@@ -42,9 +42,6 @@ class MainActivity : AppCompatActivity() {
 //        Direction of rotation
         val servoMotor = Firebase.database.getReference("Servo Motor")
 
-//        Altitude change
-        val upwardDirection = Firebase.database.getReference("Upward")
-        val downwardDirection = Firebase.database.getReference("Downward")
 
 
         sbLeftSpeed.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
@@ -93,6 +90,13 @@ class MainActivity : AppCompatActivity() {
                 dcMotorState2.setValue(0)
         }
 
+        tbForMiddleMotor.setOnClickListener {
+            if (tbForMiddleMotor.text.toString() == "ON")
+                dcMotorState3.setValue(1)
+            else
+                dcMotorState3.setValue(0)
+        }
+
         switchForDirectionRotation.setOnCheckedChangeListener { buttonView, isChecked ->
             if(isChecked)
                 servoMotor.setValue(1)
@@ -114,18 +118,5 @@ class MainActivity : AppCompatActivity() {
                 dcMotor2Rotation.setValue(0)
         }
 
-        upward.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked)
-                upwardDirection.setValue(1)
-            else
-                upwardDirection.setValue(0)
-        }
-
-        down.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked)
-                downwardDirection.setValue(1)
-            else
-                downwardDirection.setValue(0)
-        }
     }
 }

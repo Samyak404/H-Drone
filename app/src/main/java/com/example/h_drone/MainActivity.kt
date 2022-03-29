@@ -26,22 +26,21 @@ class MainActivity : AppCompatActivity() {
 
 
 //        DC Motor 1
-        val dcMotorState1 = Firebase.database.getReference("DC Motor").child("Motor 1").child("State")       //  ON / OFF state controls
-        val dcMotor1Speed = Firebase.database.getReference("DC Motor").child("Motor 1").child("Speed")       //  Speed control
-        val dcMotor1Rotation = Firebase.database.getReference("DC Motor").child("Motor 1").child("Rotation") //  Rotation control
+        val dcMotorState1 = Firebase.database.getReference("DC Motor").child("State1")       //  ON / OFF state controls
+        val dcMotor1Speed = Firebase.database.getReference("DC Motor").child("Speed1")       //  Speed control
+        val dcMotor1Rotation = Firebase.database.getReference("DC Motor").child("Rotation1") //  Rotation control
 
 
 //        DC Motor 2
-        val dcMotorState2 = Firebase.database.getReference("DC Motor").child("Motor 2").child("State")       //  ON / OFF state controls
-        val dcMotor2Speed = Firebase.database.getReference("DC Motor").child("Motor 2").child("Speed")       //  Speed control
-        val dcMotor2Rotation = Firebase.database.getReference("DC Motor").child("Motor 2").child("Rotation") //  Rotation control
+        val dcMotorState2 = Firebase.database.getReference("DC Motor").child("State2")       //  ON / OFF state controls
+        val dcMotor2Speed = Firebase.database.getReference("DC Motor").child("Speed2")       //  Speed control
+        val dcMotor2Rotation = Firebase.database.getReference("DC Motor").child("Rotation2") //  Rotation control
 
 //        DC Motor 3
-        val dcMotorState3 = Firebase.database.getReference("DC Motor").child("Motor 3").child("State")       //  ON / OFF state controls
+        val dcMotorState3 = Firebase.database.getReference("DC Motor").child("State3")       //  ON / OFF state controls
 
 //        Direction of rotation
         val servoMotor = Firebase.database.getReference("Servo Motor")
-
 
 
         sbLeftSpeed.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener{
